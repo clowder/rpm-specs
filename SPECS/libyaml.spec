@@ -57,10 +57,9 @@ you will need to install %{name}-devel.
 %exclude %{_libdir}/*.la
 
 %changelog
-* Tues Dec 27 2011 Rilindo Foster (rilindo.foster@monzell.com - 0.1.4-1
+* Tue Dec 27 2011 Rilindo Foster (rilindo.foster@monzell.com - 0.1.4-1
 - Updated to release 0.1.4, added path to pkgconfig
 * Mon May 17 2010 Dag Wieers <dag@wieers.com> - 0.1.3-1
 - Updated to release 0.1.3.
-
 * Mon May 28 2007 Dries Verachtert <dries@ulyssis.org> - 0.0.1-1
 - Initial package.

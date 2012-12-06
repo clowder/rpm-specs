@@ -39,6 +39,7 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 
 %configure \
   --enable-shared \
+  --disable-install-rdoc \
   --disable-rpath \
   --includedir=%{_includedir}/ruby \
   --libdir=%{_libdir}
@@ -63,6 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Thu Dec 06 2012 Chris Lowder <clowder@gmail.com> - 1.9.3-p327
+- No documentation.
 * Sun Nov 25 2012 Gareth Jones <me@gazj.co.uk> - 1.9.3-p327
 - Update for Ruby 1.9.3-p327 release.
 * Wed Apr 25 2012 mathew <meta@pobox.com> - 1.9.3-p194-1

@@ -15,17 +15,23 @@ rpmdev-setuptree
 ### Building the RPMs
 
 ```bash
-wget https://github.com/clowder/rpm-specs/archive/master.zip
-unzip master && mv rpm-specs-master/* rpmbuild/
-
+git clone --depth 1 https://github.com/clowder/rpm-specs.git
+cp -r rpm-specs/{SOURCES,SPECS} rpmbuild/
 cd rpmbuild/
-spectool -g -R SPECS/libyaml.spec
-rpmbuild -bb --nodeps --clean SPECS/libyaml.spec
 
+# Download all external sources
+for file in SPECS/*; do
+  spectool -g -R $file
+done
+
+# Build libyaml first, for Ruby.
+rpmbuild -bb --nodeps --clean SPECS/libyaml.spec
 sudo yum localinstall RPMS/x86_64/libyaml-devel-0.1.4-1.el6.x86_64.rpm RPMS/x86_64/libyaml-0.1.4-1.el6.x86_64.rpm
 
-spectool -g -R SPECS/ruby19.spec
-rpmbuild -bb --nodeps --clean SPECS/ruby19.spec
+# Build all the things
+for file in SPECS/*; do
+  rpmbuild -bb --nodeps --clean $file
+done
 ```
 
 ## Thanks

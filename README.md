@@ -32,3 +32,5 @@ rpmbuild -bb --nodeps --clean SPECS/ruby19.spec
 **[imeyer](http://github.com/imeyer)** for the [original ruby19.spec](https://github.com/imeyer/ruby-1.9.3-rpm).
 
 **[repoforge](https://github.com/repoforge)** for the [original libyaml.spec](https://github.com/repoforge/rpms).
+
+**[simonmcc](https://github.com/simonmcc)** for the [original redis.spec](https://github.com/simonmcc/rpmbuild-redis).
